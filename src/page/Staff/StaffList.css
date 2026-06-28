@@ -1,0 +1,255 @@
+.staff-container {
+    padding: 24px;
+    background-color: #f8fafc;
+    min-height: calc(100vh - 70px);
+}
+
+.staff-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
+}
+
+.page-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 4px 0;
+}
+
+.page-subtitle {
+    color: #64748b;
+    font-size: 14px;
+    margin: 0;
+}
+
+.btn-add-staff {
+    background-color: #0f172a;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-add-staff:hover {
+    background-color: #1e293b;
+}
+
+/* List Card */
+.staff-list-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f1f5f9;
+    padding: 20px;
+}
+
+.list-header {
+    margin-bottom: 20px;
+}
+
+.list-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1e293b;
+    margin: 0;
+}
+
+.list-filters-container {
+    margin-bottom: 24px;
+}
+
+.search-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-bar i {
+    position: absolute;
+    left: 14px;
+    color: #94a3b8;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 10px 14px 10px 40px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.2s;
+}
+
+.search-bar input:focus {
+    border-color: #cbd5e1;
+    box-shadow: 0 0 0 3px rgba(241, 245, 249, 0.5);
+}
+
+.filter-dropdowns {
+    display: flex;
+    gap: 16px;
+}
+
+.filter-dropdown {
+    flex: 1;
+    /* evenly distribute */
+    max-width: 200px;
+}
+
+.custom-select {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    background-color: white;
+    cursor: pointer;
+    color: #334155;
+    transition: all 0.2s;
+}
+
+.custom-select:focus {
+    border-color: #cbd5e1;
+}
+
+/* Table */
+.table-responsive {
+    overflow-x: auto;
+}
+
+.staff-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.staff-table th {
+    text-align: left;
+    padding: 12px 16px;
+    color: #64748b;
+    font-weight: 600;
+    font-size: 13px;
+    border-bottom: 1px solid #f1f5f9;
+    white-space: nowrap;
+}
+
+.staff-table th.text-center {
+    text-align: center;
+}
+
+.staff-table td {
+    padding: 16px;
+    vertical-align: middle;
+    border-bottom: 1px solid #f8fafc;
+    font-size: 14px;
+    color: #475569;
+}
+
+.staff-table tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+.fw-bold {
+    font-weight: 700;
+}
+
+.fw-medium {
+    font-weight: 500;
+}
+
+.text-dark {
+    color: #0f172a !important;
+}
+
+/* Role Badges */
+.role-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.role-cashier {
+    background-color: #eff6ff;
+    color: #2563eb;
+}
+
+.role-warehouse {
+    background-color: #fff7ed;
+    color: #c2410c;
+}
+
+.role-guard {
+    background-color: #faf5ff;
+    color: #9333ea;
+}
+
+.role-manager {
+    background-color: #fff1f2;
+    color: #e11d48;
+}
+
+/* Status Badges */
+.status-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.status-active {
+    background-color: #f0fdf4;
+    color: #16a34a;
+}
+
+.status-inactive {
+    background-color: #f1f5f9;
+    color: #64748b;
+}
+
+
+/* Actions */
+.actions-cell {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.btn-action {
+    background: none;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: #64748b;
+}
+
+.btn-action:hover {
+    background-color: #f1f5f9;
+}
+
+.btn-action.edit:hover {
+    color: #0284c7;
+    background-color: #e0f2fe;
+}
+
+.btn-action.delete:hover {
+    color: #e11d48;
+    background-color: #ffe4e6;
+}
