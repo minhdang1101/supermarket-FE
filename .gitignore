@@ -15,6 +15,7 @@ dist-ssr/
 # Cấu hình bảo mật dự án (Theo PHAN_CONG_CONG_VIEC.md)
 *.local
 .env.local
+PHAN_CONG_CONG_VIEC.md
 
 # Editor directories and files
 .vscode/
