@@ -17,6 +17,14 @@ export const getMenuItemsForRole = (role) => {
         { label: 'Lich ca', href: '/shift-management', roles: [ROLES.ADMIN, ROLES.MANAGER] },
       ],
     },
+    {
+      label: 'He thong',
+      iconKey: 'Settings',
+      roles: [ROLES.ADMIN],
+      submenu: [
+        { label: 'Cai dat', href: '/settings', roles: [ROLES.ADMIN] },
+      ],
+    },
   ];
 
   const hasAccess = (item) => {
