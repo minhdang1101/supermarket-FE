@@ -12,6 +12,8 @@ import ResetPassword from '@/page/Login/ResetPassword';
 import StaffPage from '@/page/Staff/StaffPage';
 import ShiftsPage from '@/page/Shifts/Shifts';
 import ShiftManagement from '@/page/ShiftManagement/ShiftManagement';
+import ProfilePage from '@/page/Profile/Profile';
+import SettingsPage from '@/page/Settings/SettingsPage';
 
 import './index.css';
 
@@ -29,6 +31,7 @@ function App() {
             <Route element={<ProtectedLayout />}>
               <Route path="/home" element={<Navigate to="/staff" replace />} />
               <Route path="/dashboard" element={<Navigate to="/staff" replace />} />
+              <Route path="/profile" element={<ProfilePage />} />
               <Route
                 path="/staff"
                 element={
@@ -50,6 +53,14 @@ function App() {
                 element={
                   <RoleRoute allowedRoles={[ROLES.ADMIN, ROLES.MANAGER]}>
                     <ShiftManagement />
+                  </RoleRoute>
+                }
+              />
+              <Route
+                path="/settings"
+                element={
+                  <RoleRoute allowedRoles={[ROLES.ADMIN]}>
+                    <SettingsPage />
                   </RoleRoute>
                 }
               />

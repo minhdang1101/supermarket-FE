@@ -1,4 +1,5 @@
-import { Bell, Search, LogOut, Menu } from 'lucide-react';
+import { Bell, Search, User, LogOut, Menu } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/contexts/AuthContext';
 import { authService } from '@/services/authService';
@@ -14,6 +15,7 @@ import { Input } from '@/components/ui/input';
 const API_BASE = import.meta.env.VITE_API_BASE_URL?.replace(/\/api\/v1\/?$/, '') || 'http://localhost:8080';
 
 export function Topbar({ onMenuClick }) {
+  const navigate = useNavigate();
   const { user } = useAuth();
   const displayName = user?.name || user?.username || 'User';
   const initials = displayName.split(/\s+/).map((s) => s[0]).join('').toUpperCase().slice(0, 2) || '?';
@@ -76,6 +78,10 @@ export function Topbar({ onMenuClick }) {
                 <p className="text-xs text-muted-foreground">{user?.role || 'Guest'}</p>
               </div>
               <DropdownMenuSeparator />
+              <DropdownMenuItem onClick={() => navigate('/profile')}>
+                <User size={16} className="mr-2" />
+                Ho so
+              </DropdownMenuItem>
               <DropdownMenuItem>
                 <Bell size={16} className="mr-2" />
                 Thong bao
