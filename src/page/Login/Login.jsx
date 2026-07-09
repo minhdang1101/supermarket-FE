@@ -41,13 +41,8 @@ const Login = () => {
                 return;
             }
             authService.setAccessToken(token);
-            const user = await fetchProfile();
-            const role = user?.role;
-            if (role === 'CASHIER') {
-                navigate('/checkout');
-            } else {
-                navigate('/home');
-            }
+            await fetchProfile();
+            navigate('/home');
         } catch (err) {
             console.error('Login failed:', err);
             setError(getErrorMessage(err, 'Đăng nhập thất bại. Vui lòng thử lại.'));

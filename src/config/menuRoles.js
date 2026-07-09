@@ -7,6 +7,8 @@ export const ROLES = {
 export const getMenuItemsForRole = (role) => {
   const menuItems = [
     { label: 'Trang chu', href: '/dashboard', iconKey: 'Home', roles: null },
+    { label: 'Danh muc', href: '/categories', iconKey: 'FolderOpen', roles: [ROLES.ADMIN, ROLES.MANAGER] },
+    { label: 'San pham', href: '/products', iconKey: 'Package', roles: [ROLES.ADMIN, ROLES.MANAGER] },
     {
       label: 'Quan ly nhan su',
       iconKey: 'Users',
@@ -18,12 +20,26 @@ export const getMenuItemsForRole = (role) => {
       ],
     },
     {
+      label: 'CRM',
+      iconKey: 'Heart',
+      roles: [ROLES.ADMIN, ROLES.MANAGER],
+      submenu: [{ label: 'Thanh vien', href: '/members', roles: [ROLES.ADMIN, ROLES.MANAGER] }],
+    },
+    {
+      label: 'Kho hang',
+      iconKey: 'Truck',
+      roles: [ROLES.ADMIN, ROLES.MANAGER],
+      submenu: [
+        { label: 'Nha cung cap', href: '/suppliers', roles: [ROLES.ADMIN, ROLES.MANAGER] },
+        { label: 'Don dat hang', href: '/purchase-orders', roles: [ROLES.ADMIN, ROLES.MANAGER] },
+        { label: 'Nhap hang', href: '/goods-receiving', roles: [ROLES.ADMIN, ROLES.MANAGER] },
+      ],
+    },
+    {
       label: 'He thong',
       iconKey: 'Settings',
       roles: [ROLES.ADMIN],
-      submenu: [
-        { label: 'Cai dat', href: '/settings', roles: [ROLES.ADMIN] },
-      ],
+      submenu: [{ label: 'Cai dat', href: '/settings', roles: [ROLES.ADMIN] }],
     },
   ];
 

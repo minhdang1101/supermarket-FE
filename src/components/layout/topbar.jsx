@@ -29,6 +29,7 @@ export function Topbar({ onMenuClick }) {
   return (
     <header className="sticky top-0 z-30 border-b border-border bg-card/50 backdrop-blur-sm">
       <div className="flex items-center justify-between gap-4 px-4 py-3">
+        {/* Left: Menu Toggle & Search */}
         <div className="flex items-center gap-4 flex-1">
           <Button
             variant="ghost"
@@ -43,19 +44,22 @@ export function Topbar({ onMenuClick }) {
             <div className="relative w-full">
               <Search size={16} className="absolute left-2 top-1/2 -translate-y-1/2 text-muted-foreground" />
               <Input
-                placeholder="Tim kiem..."
+                placeholder="Tìm kiếm giao dịch..."
                 className="pl-8 h-9"
               />
             </div>
           </div>
         </div>
 
+        {/* Right: Actions */}
         <div className="flex items-center gap-3">
+          {/* Notifications */}
           <Button variant="ghost" size="icon" className="relative">
             <Bell size={20} />
             <span className="absolute top-1 right-1 h-2 w-2 bg-primary rounded-full" />
           </Button>
 
+          {/* User Menu */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" size="icon">
@@ -75,21 +79,21 @@ export function Topbar({ onMenuClick }) {
             <DropdownMenuContent align="end" className="w-48">
               <div className="px-2 py-1.5">
                 <p className="font-semibold text-sm">{displayName}</p>
-                <p className="text-xs text-muted-foreground">{user?.role || 'Guest'}</p>
+                <p className="text-xs text-muted-foreground">{user?.role || 'Khách'}</p>
               </div>
               <DropdownMenuSeparator />
               <DropdownMenuItem onClick={() => navigate('/profile')}>
                 <User size={16} className="mr-2" />
-                Ho so
+                Hồ Sơ
               </DropdownMenuItem>
               <DropdownMenuItem>
                 <Bell size={16} className="mr-2" />
-                Thong bao
+                Thông Báo
               </DropdownMenuItem>
               <DropdownMenuSeparator />
               <DropdownMenuItem onClick={handleSignOut}>
                 <LogOut size={16} className="mr-2" />
-                Dang xuat
+                Đăng Xuất
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
