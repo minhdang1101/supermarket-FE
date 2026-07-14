@@ -262,7 +262,7 @@ const ShiftManagement = () => {
     const staffWithShiftCount = staffList.map(staff => {
         let count = 0;
         Object.values(shiftsByDay).forEach(day => {
-            ['Morning', 'Afternoon', 'Night'].forEach(type => {
+            ['MORNING', 'AFTERNOON', 'NIGHT'].forEach(type => {
                 count += (day[type] || []).filter(s => s.staffId === staff.id).length;
             });
         });

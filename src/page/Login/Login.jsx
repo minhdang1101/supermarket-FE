@@ -186,10 +186,10 @@ const Login = () => {
                             )}
                         </button>
 
-                        {/* <div className="register-prompt">
-                            Don't have an account?{' '}
-                            <Link to="/register" className="register-link">Sign Up Now</Link>
-                        </div> */}
+                        <div className="register-prompt">
+                            Chua co tai khoan?{' '}
+                            <Link to="/register" className="register-link">Dang ky ngay</Link>
+                        </div>
                     </form>
                 </div>
             </div>

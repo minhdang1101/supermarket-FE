@@ -17,6 +17,7 @@ import Dashboard from '@/page/Dashboard/Dashboard';
 import CheckoutPage from '@/page/Checkout/Checkout';
 import StaffPage from '@/page/Staff/StaffPage';
 import ShiftsPage from '@/page/Shifts/Shifts';
+import ShiftManagementPage from '@/page/ShiftManagement/ShiftManagement';
 import MembersPage from '@/page/Members/MembersPage';
 import PromotionsPage from '@/page/Promotions/Promotions';
 import SalesHistoryPage from '@/page/SalesHistory/SalesHistory';
@@ -62,6 +63,7 @@ function App() {
               <Route path="/checkout" element={<RoleRoute allowedRoles={[ROLES.ADMIN, ROLES.MANAGER, ROLES.CASHIER]}><CheckoutPage /></RoleRoute>} />
               <Route path="/staff" element={<RoleRoute allowedRoles={[ROLES.ADMIN, ROLES.MANAGER]}><StaffPage /></RoleRoute>} />
               <Route path="/shifts" element={<RoleRoute allowedRoles={[ROLES.ADMIN, ROLES.MANAGER]}><ShiftsPage /></RoleRoute>} />
+              <Route path="/shift-management" element={<RoleRoute allowedRoles={[ROLES.ADMIN, ROLES.MANAGER]}><ShiftManagementPage /></RoleRoute>} />
               <Route path="/members" element={<RoleRoute allowedRoles={[ROLES.ADMIN, ROLES.MANAGER]}><MembersPage /></RoleRoute>} />
               <Route path="/promotions" element={<RoleRoute allowedRoles={[ROLES.ADMIN, ROLES.MANAGER]}><PromotionsPage /></RoleRoute>} />
               <Route path="/sales-history" element={<RoleRoute allowedRoles={[ROLES.ADMIN, ROLES.MANAGER, ROLES.CASHIER]}><SalesHistoryPage /></RoleRoute>} />
