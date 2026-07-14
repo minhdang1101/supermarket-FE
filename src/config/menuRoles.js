@@ -26,6 +26,7 @@ export const getMenuItemsForRole = (role) => {
       submenu: [
         { label: 'Nhân Viên', href: '/staff', roles: [ROLES.ADMIN, ROLES.MANAGER] },
         { label: 'Ca Làm Việc', href: '/shifts', roles: [ROLES.ADMIN, ROLES.MANAGER] },
+        { label: 'Lich Ca', href: '/shift-management', roles: [ROLES.ADMIN, ROLES.MANAGER] },
       ],
     },
     {
