@@ -14,3 +14,8 @@ export { productService } from './productService';
 export { categoryService } from './categoryService';
 export { purchaseOrderService } from './purchaseOrderService';
 export { goodsReceiptService } from './goodsReceiptService';
+export { stockAdjustmentService, ADJUSTMENT_REASONS } from './stockAdjustmentService';
+export { inventoryService } from './inventoryService';
+export { promotionService } from './promotionService';
+export { salesService } from './salesService';
+export { barcodeService } from './barcodeService';
