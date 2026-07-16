@@ -5,7 +5,7 @@ import { tokenStore } from './tokenStore';
 export const authService = {
   login: (username, password) => authHttp.post('/auth/login', { username, password }),
 
-  register: (data) => apiClient.post('/auth/register', data),
+  register: (data) => authHttp.post('/auth/register', data),
 
   forgotPassword: (email) => authHttp.post('/auth/forgot-password', { email }),
 
