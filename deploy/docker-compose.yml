@@ -1,0 +1,56 @@
+name: supermarket
+
+services:
+  mssql:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: supermarket-db
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: "Express"
+      MSSQL_SA_PASSWORD: "${MSSQL_SA_PASSWORD:?MSSQL_SA_PASSWORD is required}"
+      MSSQL_MEMORY_LIMIT_MB: "2048"
+    volumes:
+      - supermarket_db:/var/opt/mssql
+    restart: unless-stopped
+    networks:
+      - supermarket
+
+  backend:
+    build:
+      context: ./backend
+    container_name: supermarket-backend
+    env_file:
+      - backend.env
+    environment:
+      DB_URL: "jdbc:sqlserver://mssql:1433;databaseName=SMMS;encrypt=true;trustServerCertificate=true"
+      DB_USERNAME: "sa"
+      DB_PASSWORD: "${MSSQL_SA_PASSWORD:?MSSQL_SA_PASSWORD is required}"
+      VNPAY_RETURN_URL: "http://187.77.130.63:3000/payment/vnpay-return"
+      SERVER_FORWARD_HEADERS_STRATEGY: "framework"
+      JAVA_TOOL_OPTIONS: "-XX:MaxRAMPercentage=70.0 -Dfile.encoding=UTF-8"
+    depends_on:
+      - mssql
+    volumes:
+      - supermarket_uploads:/app/uploads
+    restart: unless-stopped
+    networks:
+      - supermarket
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: supermarket-frontend
+    depends_on:
+      - backend
+    ports:
+      - "3000:80"
+    restart: unless-stopped
+    networks:
+      - supermarket
+
+networks:
+  supermarket:
+
+volumes:
+  supermarket_db:
+  supermarket_uploads:

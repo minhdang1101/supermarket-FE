@@ -206,7 +206,7 @@ const Profile = () => {
                         <div className="avatar-wrapper" onClick={handleAvatarClick} style={{ cursor: 'pointer' }}>
                             <div className="avatar-circle">
                                 {userData.avatarUrl ? (
-                                    <img src={userData.avatarUrl.startsWith('http') ? userData.avatarUrl : `http://localhost:8080${userData.avatarUrl}`} alt="Avatar" style={{ width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover' }} />
+                                    <img src={userData.avatarUrl.startsWith('http') ? userData.avatarUrl : `${window.location.origin}${userData.avatarUrl}`} alt="Avatar" style={{ width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover' }} />
                                 ) : (
                                     userData.name ? userData.name.charAt(0).toUpperCase() : '?'
                                 )}
